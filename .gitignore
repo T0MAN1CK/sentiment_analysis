@@ -1,0 +1,11 @@
+# Ignore logs, data, outputs, and unnecessary system files
+data/
+logs/
+outputs/
+*.csv
+*.pkl
+*.h5
+*.log
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

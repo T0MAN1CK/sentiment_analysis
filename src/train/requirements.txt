@@ -1,0 +1,13 @@
+gdown
+pandas
+contractions
+emoji
+nltk
+wordninja
+beautifulsoup4
+scikit-learn
+gensim
+numpy
+matplotlib
+seaborn
+tensorflow
