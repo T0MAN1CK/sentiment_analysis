@@ -65,7 +65,7 @@ docker build -t sentiment_train -f src/train/Dockerfile .
 
 **Inference Image** (Builds model serving environment):
 ```bash
-docker build -t sentiment_inference -f src/inference/Dockerfile .
+docker build -t sentiment_inference -f src/Inference/Dockerfile .
 ```
 
 ### 2. Run Training Pipeline
