@@ -11,7 +11,7 @@ data_loader loads the data and saves it in data/raw directory. text_processing.p
 vectorization.py vectorizes processes data files in different vectorization methods and saves them in data/vectorized directory.
 Finally, trian.py trains different models and saves serialized models in outputs/models directory. After the training is done, run_inference.py can 
 be executed from src/Inference directory, which will apply the best model to the test data and save the output in the output/predictions folder. 
-If specific model is preferred regardless of performance, it can manually be chosen to be ran. Instructions are in this README file.
+If specific model is preferred regardless of performance, it can manually be chosen to be ran. Instructions are in this README file. Docker volumes are provisioned, but the way commands below execute the flow, it stops the container after it runs (for stability). However, metrics and everything will appear in the logs folder. Every folder containments that will be generated via the Docker is explained below. 
 
 All the DS part can be reviewed in the Setniment_Classification_Notebook.ipynb, where whole thought process, EDA is described. Scripts are solely focused on MLE parts (however, they do save some figures after running)
 
@@ -57,6 +57,10 @@ All the DS part can be reviewed in the Setniment_Classification_Notebook.ipynb, 
 ```
 
 ## Docker Execution Guide
+
+Commands below execute whole pipeline. However, if you want container to keep running after you run it: 
+Run Containers in Detached Mode (-d) Example: (docker run -d ...)
+This allows the container to run in the background, so you can check logs and interact with it later.
 
 ### 1. Build Docker Images
 
