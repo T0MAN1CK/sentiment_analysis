@@ -71,7 +71,7 @@ y_test = load_data("data/processed/test_cleaned.csv")["sentiment"].replace({'neg
 model_performance = {}
 
 # Logistic Regression
-log_reg = LogisticRegression(max_iter=1000, random_state=42)
+log_reg = LogisticRegression(max_iter=1000, random_state=42, penalty='l2', C=0.1)
 
 def train_and_evaluate(model, X_train, y_train, X_test, y_test, vectorizer_name):
     logging.info(f"Training {model.__class__.__name__} on {vectorizer_name}...")
@@ -106,13 +106,13 @@ train_and_evaluate(rf_model, X_train_count, y_train, X_test_count, y_test, "Coun
 logging.info("Training Neural Network on Word2Vec...")
 mlp_model = Sequential([
     Input(shape=(X_train_word2vec.shape[1],)),  
-    Dense(256, activation='relu'),
+    Dense(256, activation='relu', kernel_regularizer='l2'),
     BatchNormalization(),
     Dropout(0.4),
-    Dense(128, activation='relu'),
+    Dense(128, activation='relu', kernel_regularizer='l2'),
     BatchNormalization(),
     Dropout(0.3),
-    Dense(64, activation='relu'),
+    Dense(64, activation='relu', kernel_regularizer='l2'),
     BatchNormalization(),
     Dropout(0.3),
     Dense(1, activation='sigmoid')

@@ -13,6 +13,8 @@ Finally, trian.py trains different models and saves serialized models in outputs
 be executed from src/Inference directory, which will apply the best model to the test data and save the output in the output/predictions folder. 
 If specific model is preferred regardless of performance, it can manually be chosen to be ran. Instructions are in this README file.
 
+All the DS part can be reviewed in the Setniment_Classification_Notebook.ipynb, where whole thought process, EDA is described. Scripts are solely focused on MLE parts (however, they do save some figures after running)
+
 ### Key Components
 1. **Data Pipeline**  
    - Automatic dataset download from Google Drive
@@ -142,8 +144,10 @@ System outputs are logged.
 ### Expected Output of Models:
 Minimum requirement for the project was 0.85 accuracy. 
 
-* LogisticRegression_TF-IDF: around 0.89+
-* LogisticRegression_CountVectorizer: around 0.87+
-* RandomForestClassifier_TF-IDF: around 0.85+
+* LogisticRegression_TF-IDF: around 0.87
+* LogisticRegression_CountVectorizer: around 0.88
+* RandomForestClassifier_TF-IDF: around 0.85
 * RandomForestClassifier_CountVectorizer: around 0.85+
-* MLP_Word2Vec: around 0.87+
+* MLP_Word2Vec: around 0.86
+
+Logically, the Inference container will choose LogisticRegression_CountVectorizer automaticallyh. 
